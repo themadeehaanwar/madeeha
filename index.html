@@ -15,15 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Karla:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#2B1B17;      /* Fivian chocolate */
-  --taxi:#FFC20E;     /* Kolkata taxi, used sparingly on dark */
+  --ink:#16202E;      /* deep slate navy for text and outlines */
+  --taxi:#E6EEF8;     /* soft hover tint */
   --powder:#CFE4F6;   /* powder blue for the big areas */
-  --red:#D7372B;
-  --green:#2E9E6B;
+  --red:#8A94A3;      /* grey accent */
+  --green:#5B8FD6;    /* mid blue accent */
   --blue:#2F6FEB;
-  --pink:#F28AB2;
+  --pink:#9FC2EA;     /* light blue accent */
   --paper:#F7FBFE;
-  --muted:#5d4a44;
+  --muted:#4F5B6B;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -36,8 +36,8 @@ a:focus-visible,button:focus-visible{outline:4px solid var(--blue);outline-offse
 /* ---------- hero ---------- */
 .hero{background:var(--powder);border-bottom:4px solid var(--ink);padding:56px 0 64px;position:relative;overflow:hidden}
 .hero .blob{position:absolute;border-radius:50%;border:4px solid var(--ink)}
-.blob.b1{width:210px;height:210px;background:var(--pink);right:-60px;bottom:-70px}
-.blob.b2{width:90px;height:90px;background:var(--green);left:64%;bottom:34px}
+.blob.b1{width:210px;height:210px;background:#fff;right:-60px;bottom:-70px}
+.blob.b2{width:90px;height:90px;background:var(--blue);left:64%;bottom:34px}
 .where{font-weight:700;margin:0 0 14px;font-size:1.05rem}
 .name{font-size:clamp(2.5rem,8.8vw,6.4rem);font-weight:800;line-height:1.05;margin:0 0 22px}
 .name .line{display:inline}
@@ -66,8 +66,8 @@ h2.small{font-size:clamp(1.6rem,3.6vw,2.2rem)}
 .card p{margin:0}
 .card .kind{font-weight:700;font-size:.9rem;margin-top:4px}
 .card .open{margin-top:auto;padding-top:10px;font-weight:700;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:3px}
-.c-green{background:#CDEBD9}.c-blue{background:#D2E1FF}.c-yellow{background:#FFE48A}
-.c-pink{background:#FFD3E1}.c-red{background:#FFD2C7}.c-purple{background:#E1D4FF}
+.c-green{background:#E4EDF6}.c-blue{background:#D2E1FF}.c-yellow{background:#FFFFFF}
+.c-pink{background:#CFE4F6}.c-red{background:#ECEFF3}.c-purple{background:#BCD3F2}
 
 /* ---------- experience ---------- */
 .job{display:grid;grid-template-columns:150px 1fr;gap:6px 26px;padding:22px 0;border-top:3px solid var(--ink)}
@@ -77,7 +77,7 @@ h2.small{font-size:clamp(1.6rem,3.6vw,2.2rem)}
 .job h3{font-size:1.35rem;font-weight:800;margin-bottom:6px}
 .job ul{margin:0;padding-left:20px}
 .job li{margin:3px 0;max-width:62ch}
-.job li::marker{color:var(--red)}
+.job li::marker{color:var(--blue)}
 
 /* ---------- quieter boxes: writing, beyond work ---------- */
 .boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
@@ -103,15 +103,14 @@ a.boxlink:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
 .strip h2{margin-bottom:18px}
 .skills{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:0;padding:0}
 .skills li{border:3px solid var(--ink);border-radius:999px;padding:8px 20px;font-weight:700;background:#fff;box-shadow:3px 3px 0 var(--ink);white-space:nowrap}
-.skills li:nth-child(6n+1){background:#FFE48A}.skills li:nth-child(6n+2){background:#CDEBD9}
-.skills li:nth-child(6n+3){background:#FFD3E1}.skills li:nth-child(6n+4){background:#D2E1FF}
-.skills li:nth-child(6n+5){background:#FFD2C7}.skills li:nth-child(6n){background:#E1D4FF}
+.skills li:nth-child(4n+1){background:#fff}.skills li:nth-child(4n+2){background:#E4EDF6}
+.skills li:nth-child(4n+3){background:#D2E1FF}.skills li:nth-child(4n){background:#ECEFF3}
 
 /* ---------- footer ---------- */
 footer{background:var(--ink);color:var(--paper);padding:56px 0 64px}
 footer h2{color:var(--powder);font-size:clamp(2.2rem,7vw,4.6rem)}
 .mail{display:inline-block;font:800 clamp(1.3rem,4.6vw,2.6rem) 'Bricolage Grotesque',sans-serif;color:var(--powder);margin:10px 0 22px;word-break:break-word}
-.mail:hover{color:var(--pink)}
+.mail:hover{color:#fff}
 footer p{margin:6px 0}
 footer a{color:var(--paper)}
 
@@ -338,14 +337,15 @@ dialog.pick::backdrop{background:rgba(43,27,23,.55)}
       </a>
       <a class="box bar-pink boxlink" id="honoursLink" href="#honours-list">
         <h3>15+ Honours papers in English literature</h3>
-        <p>Critical analyses from classical to modern works, including Shakespeare, Brontë, Shelley, Eliot and Beckett. Four of my favourites are here to read.</p>
-        <span class="open">Read four of them</span>
+        <p>Critical analyses from classical to modern works, including Shakespeare, Brontë, Shelley, Eliot and Beckett. A few of my best are here to read.</p>
+        <span class="open">Read my best ones</span>
       </a>
-      <div class="box bar-blue">
+      <a class="box bar-blue boxlink" href="https://tinyurl.com/yxmzsllm" target="_blank" rel="noopener">
         <h3>Academic resource archive</h3>
         <span class="when2">2020 to 2023</span>
         <p>Built a hyperlinked archive for my English Honours batch during online learning: syllabi, study materials, exam schedules, professor contacts and FAQs. Faculty praised it and 150+ students used it.</p>
-      </div>
+        <span class="open">Open the archive</span>
+      </a>
       <a class="box bar-red boxlink" href="https://www.amazon.com/dp/B0F1CNX38Q" target="_blank" rel="noopener">
         <h3>Vestiges: Poetry from the Ashes</h3>
         <p>My self-published poetry collection: twenty poems, each with an endnote, arranged in reverse from 2025 back to 2021. I wrote, edited and designed it, and published it on Amazon KDP myself.</p>
