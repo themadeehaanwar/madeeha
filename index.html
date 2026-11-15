@@ -135,6 +135,14 @@ footer a{color:var(--paper)}
   .job{grid-template-columns:1fr;gap:4px}
   .blob.b2{display:none}
 }
+
+dialog.reader{width:min(960px,94vw);height:90vh;padding:0;border:3px solid var(--ink);border-radius:16px;background:var(--paper);box-shadow:8px 8px 0 var(--ink);overflow:hidden}
+dialog.reader::backdrop{background:rgba(43,27,23,.55)}
+.reader .bar{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:3px solid var(--ink);background:var(--powder)}
+.reader .bar strong{flex:1;font-size:1rem}
+.reader .bar a,.reader .bar button{font:inherit;font-weight:700;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;text-decoration:none}
+.reader .bar a:hover,.reader .bar button:hover,.reader .bar :focus-visible{background:var(--taxi);outline:none}
+.reader iframe{display:block;width:100%;height:calc(100% - 56px);border:0;background:#fff}
 </style>
 </head>
 <body>
@@ -310,7 +318,7 @@ footer a{color:var(--paper)}
     <h2>Writing and research</h2>
     <p class="sub">English Honours taught me to read closely and argue clearly. I still write.</p>
     <div class="boxes">
-      <a class="box bar-green boxlink" href="https://docs.google.com/document/d/1CqvDevRx5yStXpZGSUReKlqNhOczBX8WT6kZFEpE0ps/edit?usp=sharing" target="_blank" rel="noopener">
+      <a class="box bar-green boxlink" id="paperLink" href="MBA_Research_Paper.pdf" target="_blank" rel="noopener">
         <h3>MBA research paper</h3>
         <p>"Are Quick Commerce Platforms Threatening Local Retailers?" I studied consumer behaviour in the shift from offline retail to quick-commerce, designed the surveys, interviewed store owners and pulled the findings together.</p>
         <span class="open">Read the paper</span>
@@ -417,6 +425,16 @@ footer a{color:var(--paper)}
   </div>
 </footer>
 
+
+<dialog class="reader" id="paperDialog" aria-label="MBA research paper">
+  <div class="bar">
+    <strong>Are Quick Commerce Platforms Threatening Local Retailers?</strong>
+    <a href="MBA_Research_Paper.pdf" target="_blank" rel="noopener">Open in new tab</a>
+    <button type="button" id="paperClose">Close</button>
+  </div>
+  <iframe id="paperFrame" title="MBA research paper" loading="lazy"></iframe>
+</dialog>
+
 <script>
 /* Split the name into letters so each can pop in. Without JavaScript the plain text just shows. */
 document.querySelectorAll('[data-split]').forEach(function(line, row){
@@ -431,6 +449,20 @@ document.querySelectorAll('[data-split]').forEach(function(line, row){
     line.appendChild(s);
   }
 });
+
+/* Paper popup: on larger screens the paper opens in a reader; on phones it opens in a new tab. */
+(function(){
+  var link=document.getElementById('paperLink'), dlg=document.getElementById('paperDialog'), frame=document.getElementById('paperFrame');
+  if(!link||!dlg||typeof dlg.showModal!=='function')return;
+  link.addEventListener('click',function(e){
+    if(!window.matchMedia('(min-width:800px) and (pointer:fine)').matches)return;
+    e.preventDefault();
+    if(!frame.getAttribute('src'))frame.setAttribute('src','MBA_Research_Paper.pdf#view=FitH');
+    dlg.showModal();
+  });
+  document.getElementById('paperClose').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+})();
 </script>
 </body>
 </html>
