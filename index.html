@@ -3,201 +3,434 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Madeeha Anwar · Operations, E-commerce and AI-built tools</title>
-<meta name="description" content="MBA (Marketing) graduate from Kolkata. Co-founder of Fivian and Flavoura. I build web apps and brand sites with AI tools.">
+<title>Madeeha Anwar: writer, co-founder and builder of apps</title>
+<meta name="description" content="Madeeha Anwar from Kolkata. English Honours, MBA in Marketing. Co-founder of Fivian and Flavoura, writer, and builder of web apps with AI tools.">
+<link rel="canonical" href="https://madeehaanwar.vercel.app/">
+<meta property="og:title" content="Madeeha Anwar">
+<meta property="og:description" content="Writer, co-founder and builder of apps. Kolkata.">
+<meta property="og:url" content="https://madeehaanwar.vercel.app/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Karla:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--teal:#0f766e;--teal-dark:#0b5a54;--bg:#faf8f4;--card:#ffffff;--text:#1f2933;--muted:#5b6670;--line:#e7e2d9}
+:root{
+  --ink:#2B1B17;      /* Fivian chocolate */
+  --taxi:#FFC20E;     /* Kolkata taxi, used sparingly on dark */
+  --powder:#CFE4F6;   /* powder blue for the big areas */
+  --red:#D7372B;
+  --green:#2E9E6B;
+  --blue:#2F6FEB;
+  --pink:#F28AB2;
+  --paper:#F7FBFE;
+  --muted:#5d4a44;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Lato,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:17px}
-a{color:var(--teal)}
-a:focus-visible,.btn:focus-visible{outline:3px solid #f5b942;outline-offset:2px}
-.wrap{max-width:960px;margin:0 auto;padding:0 22px}
-header.hero{padding:64px 0 40px}
-.eyebrow{color:var(--teal);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
-h1,h2{font-family:Merriweather,Georgia,serif;color:var(--teal-dark);line-height:1.25}
-h1{font-size:clamp(2rem,5vw,3rem);margin:.3em 0 .2em}
-.lead{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 0 24px}
-.btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:11px 20px;border-radius:999px;border:2px solid var(--teal);text-decoration:none;font-weight:700}
-.btn.primary{background:var(--teal);color:#fff}
-.btn.primary:hover{background:var(--teal-dark)}
-.btn.ghost:hover{background:#e6f2f0}
-section{padding:34px 0}
-h2{font-size:1.5rem;margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
-.card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(15,118,110,.12)}
-.card h3{margin:0;font-size:1.1rem;color:var(--teal-dark)}
-.card p{margin:0;color:var(--muted);font-size:.97rem}
-.tag{font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em}
-.go{margin-top:auto;padding-top:8px;font-weight:700;color:var(--teal);font-size:.93rem}
-.job{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
-.job h3{margin:0;font-size:1.05rem}
-.meta{color:var(--muted);font-size:.9rem;margin:2px 0 8px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Karla,system-ui,sans-serif;font-size:18px;line-height:1.55;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:4px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;position:relative}
+
+/* ---------- hero ---------- */
+.hero{background:var(--powder);border-bottom:4px solid var(--ink);padding:56px 0 64px;position:relative;overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;border:4px solid var(--ink)}
+.blob.b1{width:210px;height:210px;background:var(--pink);right:-60px;bottom:-70px}
+.blob.b2{width:90px;height:90px;background:var(--green);left:64%;bottom:34px}
+.where{font-weight:700;margin:0 0 14px;font-size:1.05rem}
+.name{font-size:clamp(3.6rem,15vw,10rem);font-weight:800;line-height:.9;margin:0 0 22px}
+.name .line{display:block}
+.name .ch{display:inline-block}
+.lead{font-size:clamp(1.15rem,2.4vw,1.5rem);max-width:30ch;margin:0 0 28px;font-weight:700;line-height:1.3}
+.btns{display:flex;flex-wrap:wrap;gap:14px;position:relative;z-index:2}
+.btn{display:inline-block;padding:13px 24px;border:3px solid var(--ink);border-radius:999px;background:#fff;font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn.dark{background:var(--ink);color:var(--powder)}
+
+/* ---------- sections ---------- */
+section{padding:64px 0 8px}
+h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:8px}
+h2.small{font-size:clamp(1.6rem,3.6vw,2.2rem)}
+.sub{margin:0 0 30px;color:var(--muted);max-width:52ch}
+.about p{max-width:60ch;margin:0 0 14px;font-size:1.15rem}
+
+/* ---------- app cards (the loud part) ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:26px 22px}
+.card{--r:-1.2deg;display:flex;flex-direction:column;gap:8px;padding:22px;border:3px solid var(--ink);border-radius:20px;text-decoration:none;box-shadow:6px 6px 0 var(--ink);transform:rotate(var(--r));transition:transform .18s,box-shadow .18s}
+.card:nth-child(even){--r:1deg}
+.card:hover{transform:rotate(0) translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink)}
+.card .ico{width:54px;height:54px;border-radius:50%;border:3px solid var(--ink);background:#fff;display:grid;place-items:center;font-size:1.6rem}
+.card h3{font-size:1.5rem;font-weight:800}
+.card p{margin:0}
+.card .kind{font-weight:700;font-size:.9rem;margin-top:4px}
+.card .open{margin-top:auto;padding-top:10px;font-weight:700;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:3px}
+.c-green{background:#CDEBD9}.c-blue{background:#D2E1FF}.c-yellow{background:#FFE48A}
+.c-pink{background:#FFD3E1}.c-red{background:#FFD2C7}.c-purple{background:#E1D4FF}
+
+/* ---------- experience ---------- */
+.job{display:grid;grid-template-columns:150px 1fr;gap:6px 26px;padding:22px 0;border-top:3px solid var(--ink)}
+.job:last-child{border-bottom:3px solid var(--ink)}
+.when{font:800 1.15rem 'Bricolage Grotesque',sans-serif;line-height:1.2}
+.when small{display:block;font:700 .9rem Karla,sans-serif;color:var(--muted);margin-top:4px}
+.job h3{font-size:1.35rem;font-weight:800;margin-bottom:6px}
 .job ul{margin:0;padding-left:20px}
-.job li{margin:3px 0}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
-.chips li{background:#e6f2f0;color:var(--teal-dark);border-radius:999px;padding:5px 13px;font-size:.92rem}
-footer{padding:36px 0 56px;border-top:1px solid var(--line);margin-top:20px}
-footer p{margin:4px 0}
-@media (max-width:520px){body{font-size:16px}header.hero{padding-top:44px}}
+.job li{margin:3px 0;max-width:62ch}
+.job li::marker{color:var(--red)}
+
+/* ---------- quieter boxes: writing, beyond work ---------- */
+.boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.box{border:3px solid var(--ink);border-radius:14px;padding:18px 20px;background:#fff}
+.box h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
+.box p{margin:0}
+.box .when2{display:block;font-weight:700;color:var(--muted);font-size:.92rem;margin-bottom:4px}
+.bar-green{border-left-width:12px;border-left-color:var(--green)}
+.bar-pink{border-left-width:12px;border-left-color:var(--pink)}
+.bar-blue{border-left-width:12px;border-left-color:var(--blue)}
+.bar-red{border-left-width:12px;border-left-color:var(--red)}
+a.boxlink{display:block;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
+a.boxlink:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.boxlink .open{display:inline-block;margin-top:8px;font-weight:700;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:3px}
+
+/* ---------- education + languages ---------- */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:34px}
+.edu p{margin:0 0 14px}
+.edu .yrs{display:block;color:var(--muted);font-size:.95rem}
+
+/* ---------- skills strip ---------- */
+.strip{margin-top:72px;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink);background:var(--powder);padding:30px 0 34px;overflow:hidden}
+.strip h2{margin-bottom:18px}
+.skills{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:0;padding:0}
+.skills li{border:3px solid var(--ink);border-radius:999px;padding:8px 20px;font-weight:700;background:#fff;box-shadow:3px 3px 0 var(--ink);white-space:nowrap}
+.skills li:nth-child(6n+1){background:#FFE48A}.skills li:nth-child(6n+2){background:#CDEBD9}
+.skills li:nth-child(6n+3){background:#FFD3E1}.skills li:nth-child(6n+4){background:#D2E1FF}
+.skills li:nth-child(6n+5){background:#FFD2C7}.skills li:nth-child(6n){background:#E1D4FF}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--paper);padding:56px 0 64px}
+footer h2{color:var(--powder);font-size:clamp(2.2rem,7vw,4.6rem)}
+.mail{display:inline-block;font:800 clamp(1.3rem,4.6vw,2.6rem) 'Bricolage Grotesque',sans-serif;color:var(--powder);margin:10px 0 22px;word-break:break-word}
+.mail:hover{color:var(--pink)}
+footer p{margin:6px 0}
+footer a{color:var(--paper)}
+
+/* ---------- motion (only when the visitor allows it) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .name .ch{transform:translateY(115%) rotate(10deg);opacity:0;animation:pop .8s cubic-bezier(.2,1.5,.4,1) forwards;animation-delay:calc(var(--i) * 60ms + 150ms)}
+  @keyframes pop{to{transform:none;opacity:1}}
+  .blob.b1{animation:float 7s ease-in-out infinite}
+  .blob.b2{animation:float 5s ease-in-out infinite reverse}
+  @keyframes float{50%{transform:translateY(-16px)}}
+  .strip .rail{display:inline-flex;white-space:nowrap;padding:6px 0 10px;animation:glide 80s linear infinite}
+  .strip .rail .skills{flex-wrap:nowrap;padding-right:12px}
+  .strip:hover .rail{animation-play-state:paused}
+  @keyframes glide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+}
+.rail .skills[aria-hidden="true"]{display:none}
+@media (prefers-reduced-motion:no-preference){.rail .skills[aria-hidden="true"]{display:flex}}
+
+@media (max-width:640px){
+  body{font-size:17px}
+  .job{grid-template-columns:1fr;gap:4px}
+  .blob.b2{display:none}
+}
 </style>
 </head>
 <body>
 
 <header class="hero">
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="eyebrow">Kolkata, India</div>
-    <h1>Madeeha Anwar</h1>
-    <p class="lead">MBA (Marketing) graduate in e-commerce and operations. I co-run two food brands, manage costing and orders, and build web apps and brand sites using AI tools.</p>
+    <p class="where">Kolkata, India</p>
+    <h1 class="name" aria-label="Madeeha Anwar">
+      <span class="line" data-split>Madeeha</span>
+      <span class="line" data-split>Anwar</span>
+    </h1>
+    <p class="lead">I run two food brands, keep costing and orders in order, and build apps with AI.</p>
     <div class="btns">
-      <a class="btn primary" href="#apps">See what I've built</a>
-      <a class="btn ghost" href="Madeeha_Anwar_Resume.pdf" download>Download resume (PDF)</a>
-      <a class="btn ghost" href="mailto:themadeehaanwar@gmail.com">Email me</a>
+      <a class="btn dark" href="#apps">See what I've built</a>
+      <a class="btn" href="Madeeha_Anwar_Resume.pdf" download>Download resume</a>
     </div>
   </div>
 </header>
 
 <main>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <p>I'm a writer. I've written poetry since I was a teenager, and in 2025 I self-published a collection, Vestiges. I studied English literature and then an MBA in Marketing, and the two shaped how I work: I read closely, I care about getting things right, and I like turning an idea into something people can actually use.</p>
+    <p>With my mother, I run two food brands in Kolkata, Fivian and Flavoura. I handle the costing, the design and the orders. I've also managed a store, designed for clients, taught abacus, and built a handful of apps with AI tools. This page brings all of it together.</p>
+  </div>
+</section>
+
 <section id="apps">
   <div class="wrap">
     <h2>Things I've built</h2>
-    <p class="sub">Websites and apps made with AI tools, all live. Tap a card to open it.</p>
+    <p class="sub">Six live projects, all made with AI tools. Tap one to open it.</p>
     <div class="grid">
-      <a class="card" href="https://mykashana.vercel.app" target="_blank" rel="noopener">
-        <span class="tag">Web app</span>
+
+      <a class="card c-green" href="https://mykashana.vercel.app" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🌳</span>
         <h3>Kashana</h3>
-        <p>An interactive family tree. Relatives can tap names to explore, and suggest corrections or additions that are reviewed before they appear.</p>
-        <span class="go">Open →</span>
+        <span class="kind">Family tree app</span>
+        <p>Tap a name to explore a family's lineage. Relatives can suggest corrections or additions, which are reviewed before they appear.</p>
+        <span class="open">Open Kashana</span>
       </a>
-      <a class="card" href="https://bodyatlas3d.vercel.app" target="_blank" rel="noopener">
-        <span class="tag">Web app</span>
+
+      <a class="card c-blue" href="https://bodyatlas3d.vercel.app" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🫀</span>
         <h3>Body Atlas 3D</h3>
-        <p>An interactive 3D model of the human body. Rotate, zoom, tap parts, switch between X-ray, skeleton and skin views, or take a quiz.</p>
-        <span class="go">Open →</span>
+        <span class="kind">Interactive anatomy</span>
+        <p>Rotate and zoom a 3D human body, tap parts to explore, switch between X-ray, skeleton and skin views, or take a quiz.</p>
+        <span class="open">Open Body Atlas</span>
       </a>
-      <a class="card" href="https://kynmerchandise.vercel.app" target="_blank" rel="noopener">
-        <span class="tag">Catalogue site</span>
+
+      <a class="card c-yellow" href="https://kynmerchandise.vercel.app" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🛍️</span>
         <h3>KYN Merchandise</h3>
-        <p>The merchandise catalogue for Know Your Neighbour, an initiative of Sabar Institute. Orders come in through WhatsApp.</p>
-        <span class="go">Open →</span>
+        <span class="kind">Catalogue site</span>
+        <p>The merchandise catalogue for Know Your Neighbour, an initiative of Sabar Institute. Orders come in on WhatsApp.</p>
+        <span class="open">Open the catalogue</span>
       </a>
-      <a class="card" href="https://fivian.in" target="_blank" rel="noopener">
-        <span class="tag">Brand and store</span>
+
+      <a class="card c-pink" href="https://fivian.in" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🍫</span>
         <h3>Fivian</h3>
-        <p>Website for our handcrafted chocolate and confectionery brand from Kolkata.</p>
-        <span class="go">Open →</span>
+        <span class="kind">Brand and ordering site</span>
+        <p>Handcrafted chocolates and desserts from our Kolkata home kitchen, with a cart that sends your order to WhatsApp.</p>
+        <span class="open">Open Fivian</span>
       </a>
-      <a class="card" href="https://myflavoura.in" target="_blank" rel="noopener">
-        <span class="tag">Brand and store</span>
+
+      <a class="card c-red" href="https://myflavoura.in" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🌶️</span>
         <h3>Flavoura</h3>
-        <p>Website for our savoury snacks and instant masala premixes brand.</p>
-        <span class="go">Open →</span>
+        <span class="kind">Brand and ordering site</span>
+        <p>Instant gravy and marinade premixes for restaurant-style meals in about 15 minutes, shipped across India.</p>
+        <span class="open">Open Flavoura</span>
       </a>
-      <a class="card" href="https://limitlesstetris.vercel.app" target="_blank" rel="noopener">
-        <span class="tag">Game</span>
+
+      <a class="card c-purple" href="https://limitlesstetris.vercel.app" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🧱</span>
         <h3>Limitless Tetris</h3>
-        <p>A free, ad-free Tetris game that runs in the browser, on phone or desktop.</p>
-        <span class="go">Open →</span>
+        <span class="kind">Game</span>
+        <p>A free Tetris game with no ads that plays in the browser, on phone or desktop, even offline.</p>
+        <span class="open">Play it</span>
       </a>
+
     </div>
   </div>
 </section>
 
 <section id="experience">
   <div class="wrap">
-    <h2>Experience</h2>
-    <p class="sub">Operations, costing, stock and order flow, plus design and writing.</p>
+    <h2>Where I've worked</h2>
+    <p class="sub">Operations, costing, stock and order flow, plus design, writing and teaching.</p>
 
-    <div class="job">
-      <h3>Co-Founder, Fivian and Flavoura (food brands)</h3>
-      <div class="meta">Sep 2023 – Present · Kolkata</div>
-      <ul>
-        <li>Calculate ingredient costs for every product exactly, and track margins and expenses.</li>
-        <li>Design the brand identity, packaging and the two ordering websites.</li>
-        <li>Manage orders and fulfilment, from enquiry to delivery.</li>
-      </ul>
-    </div>
+    <article class="job">
+      <div class="when">Sep 2023 to now<small>Kolkata</small></div>
+      <div>
+        <h3>Co-Founder, Fivian and Flavoura</h3>
+        <ul>
+          <li>Calculate ingredient costs for every product exactly, and track margins and expenses.</li>
+          <li>Design the brands, packaging and both ordering websites.</li>
+          <li>Run orders and fulfilment, including Flavoura shipping across India.</li>
+          <li>Sold 1,500+ Fivian units in under two years.</li>
+        </ul>
+      </div>
+    </article>
 
-    <div class="job">
-      <h3>Creative &amp; Digital Lead (Part-time), Sabar Institute</h3>
-      <div class="meta">Apr 2026 – Jun 2026</div>
-      <ul>
-        <li>Designed 45+ posters, cards and banners.</li>
-        <li>Wrote and sent the newsletter and mass emails through Brevo.</li>
-        <li>Updated the website and built the Know Your Neighbour merchandise catalogue and landing pages.</li>
-      </ul>
-    </div>
+    <article class="job">
+      <div class="when">Apr to Jun 2026<small>Part-time</small></div>
+      <div>
+        <h3>Creative &amp; Digital Lead, Sabar Institute</h3>
+        <ul>
+          <li>Designed 45+ posters, cards and banners.</li>
+          <li>Wrote and sent the newsletter and mass emails through Brevo.</li>
+          <li>Updated the website and built the Know Your Neighbour merchandise catalogue and landing pages.</li>
+        </ul>
+      </div>
+    </article>
 
-    <div class="job">
-      <h3>Retail Store Manager, AK Mart</h3>
-      <div class="meta">Oct 2024 – May 2026 · Kolkata</div>
-      <ul>
-        <li>Managed inventory, vendors and merchandising.</li>
-        <li>Improved stock turnover 6x in nine months.</li>
-        <li>Handled billing and stock records in Vyapar.</li>
-      </ul>
-    </div>
+    <article class="job">
+      <div class="when">Oct 2024 to May 2026<small>Kolkata</small></div>
+      <div>
+        <h3>Retail Store Manager, AK Mart</h3>
+        <ul>
+          <li>Managed inventory, vendors and merchandising.</li>
+          <li>Improved stock turnover 6x in nine months.</li>
+          <li>Handled billing and stock records in Vyapar.</li>
+        </ul>
+      </div>
+    </article>
 
-    <div class="job">
-      <h3>Freelance Graphic Designer, Grafixl</h3>
-      <div class="meta">Nov 2023 – 2025 (selective projects since)</div>
-      <ul>
-        <li>Delivered 200+ design projects for 25+ clients.</li>
-        <li>Wrote 20+ blog posts.</li>
-      </ul>
-    </div>
+    <article class="job">
+      <div class="when">May 2025 to now<small>Saturdays</small></div>
+      <div>
+        <h3>Part-time Educator, Abacus Scholars</h3>
+        <ul><li>Teach abacus techniques, with interactive methods that keep students engaged and build competitive skill.</li></ul>
+      </div>
+    </article>
 
-    <div class="job">
-      <h3>Graphic Designer and Social Media Marketer, Arshia's Kitchen</h3>
-      <div class="meta">Aug 2018 – Sep 2024</div>
-      <ul>
-        <li>Edited 200+ YouTube videos and designed logos, menus and packaging.</li>
-        <li>Grew the channel to 700+ subscribers.</li>
-      </ul>
-    </div>
+    <article class="job">
+      <div class="when">Nov 2023 to 2025<small>Selective projects since</small></div>
+      <div>
+        <h3>Freelance Graphic Designer, Grafixl</h3>
+        <ul>
+          <li>Delivered 200+ branding and design projects for 25+ clients: logos, branding, marketing materials and packaging.</li>
+          <li>Wrote and published 20+ blog posts on design and marketing.</li>
+        </ul>
+      </div>
+    </article>
 
-    <div class="job">
-      <h3>Part-time Educator, Abacus Scholars</h3>
-      <div class="meta">May 2025 – Present</div>
-      <ul><li>Teach abacus on Saturdays.</li></ul>
+    <article class="job">
+      <div class="when">Jun 2023 to Apr 2024</div>
+      <div>
+        <h3>Private English Tutor</h3>
+        <ul><li>Taught individual school students, with a focus on writing, comprehension and critical reading.</li></ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Aug 2018 to Sep 2024</div>
+      <div>
+        <h3>Graphic Designer and Social Media Marketer, Arshia's Kitchen</h3>
+        <ul>
+          <li>Created and edited 200+ YouTube videos, and designed logos, menus and packaging.</li>
+          <li>Grew the channel to 900 subscribers.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <h2>Writing and research</h2>
+    <p class="sub">English Honours taught me to read closely and argue clearly. I still write.</p>
+    <div class="boxes">
+      <a class="box bar-green boxlink" href="https://docs.google.com/document/d/1CqvDevRx5yStXpZGSUReKlqNhOczBX8WT6kZFEpE0ps/edit?usp=sharing" target="_blank" rel="noopener">
+        <h3>MBA research paper</h3>
+        <p>"Are Quick Commerce Platforms Threatening Local Retailers?" I studied consumer behaviour in the shift from offline retail to quick-commerce, designed the surveys, interviewed store owners and pulled the findings together.</p>
+        <span class="open">Read the paper</span>
+      </a>
+      <div class="box bar-pink">
+        <h3>15+ Honours papers in English literature</h3>
+        <p>Critical analyses from classical to modern works, including Shakespeare, Brontë, Shelley, Eliot and Beckett.</p>
+      </div>
+      <div class="box bar-blue">
+        <h3>Academic resource archive</h3>
+        <span class="when2">2020 to 2023</span>
+        <p>Built a hyperlinked archive for my English Honours batch during online learning: syllabi, study materials, exam schedules, professor contacts and FAQs. Faculty praised it and 150+ students used it.</p>
+      </div>
+      <a class="box bar-red boxlink" href="https://www.amazon.com/dp/B0F1CNX38Q" target="_blank" rel="noopener">
+        <h3>Vestiges: Poetry from the Ashes</h3>
+        <p>My self-published poetry collection: twenty poems, each with an endnote, arranged in reverse from 2025 back to 2021. I wrote, edited and designed it, and published it on Amazon KDP myself.</p>
+        <span class="open">See it on Amazon</span>
+      </a>
+      <div class="box bar-green">
+        <h3>School and college magazines</h3>
+        <p>My poems were published in several school and college magazines.</p>
+      </div>
+      <div class="box bar-pink">
+        <h3>3rd place at Greenathon</h3>
+        <p>Won third place in poetry at this inter-school event with 13 schools, and was recognised in several other inter-school writing contests.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="about">
+<section id="beyond">
+  <div class="wrap">
+    <h2>Beyond work</h2>
+    <p class="sub">Volunteering, public speaking and a few things I trained in.</p>
+    <div class="boxes">
+      <div class="box bar-blue">
+        <h3>Class Representative</h3>
+        <p>Represented 150+ students for two years in a row at Bhawanipur Education Society College, carrying messages between students and faculty.</p>
+      </div>
+      <div class="box bar-red">
+        <h3>NGO volunteering</h3>
+        <p>Designed event materials and promotional content for several NGO initiatives.</p>
+      </div>
+      <div class="box bar-green">
+        <h3>Abacus mental maths</h3>
+        <p>Completed the SIP Abacus programme from Level 1 to Advanced Level 7.</p>
+      </div>
+      <div class="box bar-pink">
+        <h3>Elocution and drama</h3>
+        <p>Studied elocution at the Sharmistha Shome LCM Centre (London College of Music, Kolkata) and took part in the Espressivo dramatic performance in 2015.</p>
+      </div>
+      <div class="box bar-blue">
+        <h3>Public speaking</h3>
+        <p>Took part in public speaking and impromptu sessions at the Speakers Club of The Sirri Saqti Foundation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
   <div class="wrap cols">
-    <div>
-      <h2>Education</h2>
-      <p><strong>MBA, Marketing</strong><br>Symbiosis (provisional certificate, completed May 2026)</p>
-      <p><strong>BA, English (Hons)</strong></p>
+    <div class="edu">
+      <h2 class="small">Education</h2>
+      <p><strong>MBA in Marketing</strong><br>Symbiosis School for Online and Digital Learning<span class="yrs">Completed May 2026, provisional certificate</span></p>
+      <p><strong>BA in English (Hons.)</strong><br>Bhawanipur Education Society College<span class="yrs">Nov 2020 to Dec 2023</span></p>
+      <p><strong>Classes I to XII (CISCE)</strong><br>Pratt Memorial School<span class="yrs">Apr 2007 to Mar 2020</span></p>
     </div>
-    <div>
-      <h2>Skills</h2>
-      <ul class="chips">
-        <li>E-commerce</li><li>Inventory management</li><li>Cost analysis</li>
-        <li>Google Workspace</li><li>Operations</li><li>Vyapar</li>
-        <li>Brevo email</li><li>Canva and design</li><li>Building web apps with AI</li>
-      </ul>
+    <div class="edu">
+      <h2 class="small">Languages</h2>
+      <p><strong>English</strong>, fluent<br><strong>Hindi</strong>, fluent<br><strong>Bengali</strong>, conversational</p>
     </div>
   </div>
 </section>
+
 </main>
+
+<div class="strip" role="region" aria-label="Skills">
+  <div class="wrap"><h2 class="small">What I can do</h2></div>
+  <div class="rail">
+    <ul class="skills">
+      <li>Writing and editing</li><li>Research and analysis</li><li>Content development</li><li>Proofreading</li>
+      <li>E-commerce</li><li>Cost analysis</li><li>Inventory management</li><li>Retail store management</li>
+      <li>Graphic design and branding</li><li>Packaging design</li><li>Social media content</li><li>Video editing</li>
+      <li>Building web apps with AI</li><li>Google Workspace</li><li>Microsoft Office</li><li>Canva Pro</li>
+      <li>Vyapar billing</li><li>Basic WordPress</li><li>Professional document formatting</li>
+    </ul>
+    <ul class="skills" aria-hidden="true">
+      <li>Writing and editing</li><li>Research and analysis</li><li>Content development</li><li>Proofreading</li>
+      <li>E-commerce</li><li>Cost analysis</li><li>Inventory management</li><li>Retail store management</li>
+      <li>Graphic design and branding</li><li>Packaging design</li><li>Social media content</li><li>Video editing</li>
+      <li>Building web apps with AI</li><li>Google Workspace</li><li>Microsoft Office</li><li>Canva Pro</li>
+      <li>Vyapar billing</li><li>Basic WordPress</li><li>Professional document formatting</li>
+    </ul>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
-    <h2>Get in touch</h2>
-    <p>Email: <a href="mailto:themadeehaanwar@gmail.com">themadeehaanwar@gmail.com</a></p>
-    <p>Phone / WhatsApp: <a href="https://wa.me/917595868655">+91 75958 68655</a></p>
+    <h2>Say hello</h2>
+    <a class="mail" href="mailto:themadeehaanwar@gmail.com">themadeehaanwar@gmail.com</a>
+    <p>Phone and WhatsApp: <a href="https://wa.me/917595868655">+91 75958 68655</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/themadeehaanwar" target="_blank" rel="noopener">linkedin.com/in/themadeehaanwar</a></p>
   </div>
 </footer>
 
+<script>
+/* Split the name into letters so each can pop in. Without JavaScript the plain text just shows. */
+document.querySelectorAll('[data-split]').forEach(function(line, row){
+  var text = line.textContent.trim();
+  line.textContent = '';
+  line.setAttribute('aria-hidden', 'true');
+  for (var i = 0; i < text.length; i++){
+    var s = document.createElement('span');
+    s.className = 'ch';
+    s.textContent = text[i];
+    s.style.setProperty('--i', i + row * 7);
+    line.appendChild(s);
+  }
+});
+</script>
 </body>
 </html>
