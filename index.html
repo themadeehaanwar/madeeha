@@ -143,6 +143,19 @@ dialog.reader::backdrop{background:rgba(43,27,23,.55)}
 .reader .bar a,.reader .bar button{font:inherit;font-weight:700;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;text-decoration:none}
 .reader .bar a:hover,.reader .bar button:hover,.reader .bar :focus-visible{background:var(--taxi);outline:none}
 .reader iframe{display:block;width:100%;height:calc(100% - 56px);border:0;background:#fff}
+
+dialog.pick{width:min(640px,94vw);padding:0;border:3px solid var(--ink);border-radius:16px;background:var(--paper);box-shadow:8px 8px 0 var(--ink)}
+dialog.pick::backdrop{background:rgba(43,27,23,.55)}
+.pick .bar{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:3px solid var(--ink);background:var(--powder)}
+.pick .bar strong{flex:1}
+.pick .bar button{font:inherit;font-weight:700;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.pick .bar button:hover,.pick .bar button:focus-visible{background:var(--taxi);outline:none}
+.pick ul{list-style:none;margin:0;padding:8px 16px 16px}
+.pick li a{display:block;padding:12px 0;border-bottom:2px solid var(--powder);text-decoration:none;color:inherit}
+.pick li:last-child a{border-bottom:0}
+.pick li a:hover b,.pick li a:focus-visible b{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+.pick li a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.pick li span{display:block;color:var(--muted);font-size:.95rem;margin-top:2px}
 </style>
 </head>
 <body>
@@ -323,10 +336,11 @@ dialog.reader::backdrop{background:rgba(43,27,23,.55)}
         <p>"Are Quick Commerce Platforms Threatening Local Retailers?" I studied consumer behaviour in the shift from offline retail to quick-commerce, designed the surveys, interviewed store owners and pulled the findings together.</p>
         <span class="open">Read the paper</span>
       </a>
-      <div class="box bar-pink">
+      <a class="box bar-pink boxlink" id="honoursLink" href="#honours-list">
         <h3>15+ Honours papers in English literature</h3>
-        <p>Critical analyses from classical to modern works, including Shakespeare, Brontë, Shelley, Eliot and Beckett.</p>
-      </div>
+        <p>Critical analyses from classical to modern works, including Shakespeare, Brontë, Shelley, Eliot and Beckett. Four of my favourites are here to read.</p>
+        <span class="open">Read four of them</span>
+      </a>
       <div class="box bar-blue">
         <h3>Academic resource archive</h3>
         <span class="when2">2020 to 2023</span>
@@ -426,6 +440,15 @@ dialog.reader::backdrop{background:rgba(43,27,23,.55)}
 </footer>
 
 
+<dialog class="pick" id="honoursDialog" aria-label="English Honours papers">
+  <div class="bar"><strong>English Honours papers</strong><button type="button" id="honoursClose">Close</button></div>
+  <ul>
+    <li><a href="Honours_Manto_Partition.pdf" target="_blank" rel="noopener" data-paper="Suffering, Trauma and Displacement in Manto's Partition Stories"><b>Suffering, Trauma and Displacement in Manto's Partition Stories</b><span>How Manto writes violence, silence and women's bodies in the Partition.</span></a></li>
+    <li><a href="Honours_Chronicle_of_a_Death_Foretold.pdf" target="_blank" rel="noopener" data-paper="Chronicle of a Death Foretold: A Postmodern Novella"><b>Chronicle of a Death Foretold: A Postmodern Novella</b><span>Why Márquez's novella reads as postmodern.</span></a></li>
+    <li><a href="Honours_The_Void_Muktibodh.pdf" target="_blank" rel="noopener" data-paper="Use of Imagery in Muktibodh's &quot;The Void&quot;"><b>Use of Imagery in Muktibodh's "The Void"</b><span>A close reading of a Hindi modernist poem, read alongside Eliot and Yeats.</span></a></li>
+    <li><a href="Honours_Wuthering_Heights.pdf" target="_blank" rel="noopener" data-paper="Emily Brontë's Subversive Characterisation in Wuthering Heights"><b>Emily Brontë's Subversive Characterisation in Wuthering Heights</b><span>How Brontë's characters break Victorian ideals.</span></a></li>
+  </ul>
+</dialog>
 <dialog class="reader" id="paperDialog" aria-label="MBA research paper">
   <div class="bar">
     <strong>Are Quick Commerce Platforms Threatening Local Retailers?</strong>
@@ -457,11 +480,34 @@ document.querySelectorAll('[data-split]').forEach(function(line, row){
   link.addEventListener('click',function(e){
     if(!window.matchMedia('(min-width:800px) and (pointer:fine)').matches)return;
     e.preventDefault();
-    if(!frame.getAttribute('src'))frame.setAttribute('src','MBA_Research_Paper.pdf#view=FitH');
+    dlg.querySelector('.bar strong').textContent='Are Quick Commerce Platforms Threatening Local Retailers?';
+    dlg.querySelector('.bar a').setAttribute('href','MBA_Research_Paper.pdf');
+    frame.setAttribute('src','MBA_Research_Paper.pdf#view=FitH');
     dlg.showModal();
   });
   document.getElementById('paperClose').addEventListener('click',function(){dlg.close();});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+})();
+
+/* Honours papers: list popup, then the same reader. Phones open the PDF in a new tab. */
+(function(){
+  var open=document.getElementById('honoursLink'), list=document.getElementById('honoursDialog'), dlg=document.getElementById('paperDialog'), frame=document.getElementById('paperFrame');
+  if(!open||!list||!dlg||typeof list.showModal!=='function')return;
+  var wide=function(){return window.matchMedia('(min-width:800px) and (pointer:fine)').matches;};
+  open.addEventListener('click',function(e){e.preventDefault();list.showModal();});
+  document.getElementById('honoursClose').addEventListener('click',function(){list.close();});
+  list.addEventListener('click',function(e){if(e.target===list)list.close();});
+  list.querySelectorAll('a[data-paper]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(!wide())return;
+      e.preventDefault();
+      list.close();
+      dlg.querySelector('.bar strong').textContent=a.getAttribute('data-paper');
+      dlg.querySelector('.bar a').setAttribute('href',a.getAttribute('href'));
+      frame.setAttribute('src',a.getAttribute('href')+'#view=FitH');
+      dlg.showModal();
+    });
+  });
 })();
 </script>
 </body>
